@@ -1,6 +1,7 @@
 package accountmngsys;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class service {
 	
@@ -12,9 +13,14 @@ public class service {
 		
 	}
 	
-	public void insertAcc(account newAcc) {
+	public String insertAcc(account newAcc) {
 		accMap.put(newAcc.getAccnum(), newAcc);
-		System.out.println("Account: " + newAcc.getAccnum() + " added!");
+		return "Account: " + newAcc.getAccnum() + " added!";
+	}
+	
+	public String removeAcc(int accNum) {
+		accMap.remove(accNum);
+		return "Account: " + accNum + " removed!";
 	}
 	
 	public void printMap() {
@@ -26,6 +32,10 @@ public class service {
 			System.out.println(value);
 			
 		}
+	}
+	
+	public Map<Integer, account> returnJSONMap(){
+		return accMap;
 	}
 	
 }
