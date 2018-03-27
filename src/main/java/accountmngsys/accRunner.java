@@ -1,5 +1,11 @@
 package accountmngsys;
 
+import java.io.IOException;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
 public class accRunner {
 	
 	public static void main(String[] args) {
@@ -17,9 +23,19 @@ public class accRunner {
 		main.insertAcc(thirdAcc);
 		main.insertAcc(fthAcc);
 		
-		System.out.println(main.retrieveAcc(12345));
+		ObjectMapper mapper = new ObjectMapper();
 		
-		main.printMap();
-		
+		try {
+			System.out.println(mapper.writeValueAsString(main.returnJSONMap()));
+		} catch (JsonGenerationException e) {
+			System.out.println("JsonGenerationException");
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			System.out.println("JsonMappingException");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("IOException");
+			e.printStackTrace();
+		}
 	}
 }
