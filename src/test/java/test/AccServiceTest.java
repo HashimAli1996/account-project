@@ -1,20 +1,19 @@
 package test;
-import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import accountmngsys.account;
-import accountmngsys.service;
+import accountmngsys.Account;
+import accountmngsys.Service;
 
-public class accServiceTest {
+public class AccServiceTest {
 
 	@Test
 	public void testAccService() {
-		account firstAcc = new account(12345, "Hashim", "Ali");
-		account secAcc = new account(678910, "Abdi", "Rahman");
+		Account firstAcc = new Account(12345, "Hashim", "Ali");
+		Account secAcc = new Account(678910, "Abdi", "Rahman");
 		
-		service main = new service();
+		Service main = new Service();
 		
 		main.insertAcc(firstAcc);
 		Assert.assertEquals(1, main.returnMap().size());

@@ -9,9 +9,9 @@ public class JavatToJsonTest {
 
 	@Test
 	public void testJavaJson() {
-		account firstAcc = new account(12345, "Hashim", "Ali");
-		account secAcc = new account(678910, "Abdi", "Rahman");
-		service main = new service();		
+		Account firstAcc = new Account(12345, "Hashim", "Ali");
+		Account secAcc = new Account(678910, "Abdi", "Rahman");
+		Service main = new Service();		
 		main.insertAcc(firstAcc);
 		main.insertAcc(secAcc);
 

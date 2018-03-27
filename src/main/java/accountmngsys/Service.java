@@ -5,21 +5,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-public class service {
+public class Service {
 
-	private HashMap<Integer, account> accMap = new HashMap<Integer, account>();
+	private HashMap<Integer, Account> accMap = new HashMap<Integer, Account>();
 
-	public account retrieveAcc(int accNum) {
+	public Account retrieveAcc(int accNum) {
 
 		return accMap.get(accNum);
 
 	}
 
-	public String insertAcc(account newAcc) {
+	public String insertAcc(Account newAcc) {
 		accMap.put(newAcc.getAccnum(), newAcc);
 		return "Account: " + newAcc.getAccnum() + " added!";
 	}
@@ -40,7 +39,7 @@ public class service {
 		}
 	}
 
-	public Map<Integer, account> returnMap() {
+	public Map<Integer, Account> returnMap() {
 		return accMap;
 	}
 

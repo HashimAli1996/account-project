@@ -1,12 +1,12 @@
 package accountmngsys;
 
-public class account {
+public class Account {
 	
 	private int accnum;
 	private String fName;
 	private String lName;
 		
-	public account(int accnum, String fName, String lName) {
+	public Account(int accnum, String fName, String lName) {
 		super();
 		this.accnum = accnum;
 		this.fName = fName;
