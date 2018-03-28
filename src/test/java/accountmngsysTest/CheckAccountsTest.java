@@ -29,7 +29,7 @@ public class CheckAccountsTest {
 	@Test
 	public void test() {
 		assertEquals(testFunctionality.findName("Hashim", accService), 1);
-		Account frthAcc = new Account(456123, "udhufh", "Mahmood");
+		Account frthAcc = new Account(456123, "Hashim", "Mahmood");
 		accService.insertAcc(frthAcc);
 		assertEquals(testFunctionality.findName("Hashim", accService), 2);
 	}
