@@ -1,4 +1,4 @@
-package test;
+package accountmngsysTest;
 
 import org.junit.Assert;
 import org.junit.Test;
