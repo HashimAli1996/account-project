@@ -15,6 +15,8 @@ public class CheckAccountsTest {
 	private CheckAccounts testFunctionality;
 	
 	@Before public void setUp() throws Exception {
+		accService = new Service();
+		testFunctionality = new CheckAccounts();
 		Account firstAcc = new Account(12345, "Hashim", "Ali");
 		Account secAcc = new Account(678910, "Abdi", "Rahman");
 		Account thirdAcc = new Account(11121314, "Jordan", "Smart");
@@ -26,7 +28,10 @@ public class CheckAccountsTest {
 
 	@Test
 	public void test() {
-		assertEquals(testFunctionality.findName("Hashim"), 1);
+		assertEquals(testFunctionality.findName("Hashim", accService), 1);
+		Account frthAcc = new Account(456123, "udhufh", "Mahmood");
+		accService.insertAcc(frthAcc);
+		assertEquals(testFunctionality.findName("Hashim", accService), 2);
 	}
 
 }
